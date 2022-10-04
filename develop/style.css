@@ -1,0 +1,81 @@
+* {
+    font-family: Arial;
+}
+
+
+.banner {
+    font-family: Arial;
+    font-weight: bolder;
+    color: white;
+    font-size: 30px;
+    height: 50px;
+    background-color: navy;
+    background-image: linear-gradient(to right, rgb(51, 102, 255) , rgb(15, 43, 126));
+}
+
+.full-position {
+    display:inline-block;
+    position: relative;
+}
+
+.container1 {
+    margin: 10px 10px 50px 10px;
+
+}
+
+.input-box {
+    margin-top:10px;
+    margin-bottom: 10px;
+    width: 300px;
+    padding: 15px;
+    border-color: rgb(209, 209, 209);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.search-button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(108, 143, 255);
+    color: rgb(222, 222, 222);
+    font-weight: bolder;
+}
+
+.spacer {
+    height: 2px;
+    background-color: rgb(209, 209, 209);
+    margin-bottom: 20px;
+}
+
+button {
+    display: block;
+    margin-bottom: 20px;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(163, 163, 163);
+}
+
+.header-text {
+    font-size: 30px;
+    color: black;
+    font-weight: bolder;
+}
+
+.container2 {
+    height: auto;
+    border: 1px solid black;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: -200px;
+    width: 800px;
+}
+
+h3 {
+    margin: 15px 0px 15px 15px;
+}
+
+.sub-text {
+    padding: 15px 0px 15px 15px;
+}
