@@ -7,6 +7,8 @@
     font-family: Arial;
     font-weight: bolder;
     color: white;
+    text-align:center;
+    padding-top: 10px;
     font-size: 30px;
     height: 50px;
     background-color: navy;
@@ -14,13 +16,14 @@
 }
 
 .full-position {
-    display:inline-block;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    grid-auto-rows: 400px;
 }
 
 .container1 {
     margin: 10px 10px 50px 10px;
-
+    width: fit-content;
 }
 
 .input-box {
@@ -64,12 +67,10 @@ button {
 }
 
 .container2 {
+    margin-top:10px;
     height: auto;
     border: 1px solid black;
-    position: absolute;
-    margin-left: 200px;
-    margin-top: -200px;
-    width: 800px;
+    width: 1080px
 }
 
 h3 {
@@ -78,4 +79,47 @@ h3 {
 
 .sub-text {
     padding: 15px 0px 15px 15px;
+}
+
+h4 {
+    margin-top:20px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    margin-left: 10px;
+}
+.weather-card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    grid-auto-rows: 200px;
+    grid-gap: 20px;
+}
+
+.weather-card {
+    height: auto;
+    border: 1px solid black;
+    background-color: rgb(64, 62, 71);
+    color: white;
+    border-radius: 10px;
+}
+
+.date-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.emoji-text {
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.weather-text {
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
