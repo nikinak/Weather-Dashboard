@@ -16,21 +16,21 @@
     <section class="full-position">
         <section class="container1">
             <h2 class="header-text">Search for a City:</h2>
-            <input class="input-box" type="text" placeholder="San Diego">
-            <button class ="search-button">Search</button>
+            <input class="input-box" type="text" id="city-search" placeholder="San Diego">
+            <button class ="search-button" id="submit">Search</button>
             <p class="spacer"></p>
-            <button>Atlanta</button>
-            <button>Denver</button>
-            <button>Seattle</button>
-            <button>San Francisco</button>
-            <button>Orlando</button>
-            <button>New York</button>
-            <button>Chicago</button>
-            <button>Austin</button>
+            <button id="atlanta">Atlanta</button>
+            <button id="denver">Denver</button>
+            <button id="seattle">Seattle</button>
+            <button id="san-francisco">San Francisco</button>
+            <button id="orlando">Orlando</button>
+            <button id="new-york">New York</button>
+            <button id="chicago">Chicago</button>
+            <button id="austin">Austin</button>
         </section>
         <section class="sub-full-position">
             <section class="container2">
-                <h3 class="header-text">City Name <span>(date)</span></h3>
+                <h3 class="header-text" id="city-name">City Name <span id="today-date">(date)</span></h3>
                 <p class="sub-text">Temp:</p>
                 <p class="sub-text">Wind:</p>
                 <p class="sub-text">Humidity:</p>
@@ -39,35 +39,35 @@
                 <h4>5-Day Forecast:</h4>
                 <div class = "weather-card-container">
                 <section class="weather-card">
-                    <p class="date-text">Date</p>
+                    <p class="date-text" id="date1">Date</p>
                     <p class="emoji-text">emoji</p>
                     <p class="weather-text">Temp:</p>
                     <p class="weather-text">Wind:</p>
                     <p class="weather-text">Humidity:</p>
                 </section>
                 <section class="weather-card">
-                    <p class="date-text">Date</p>
+                    <p class="date-text"  id="date2">Date</p>
                     <p class="emoji-text">emoji</p>
                     <p class="weather-text">Temp:</p>
                     <p class="weather-text">Wind:</p>
                     <p class="weather-text">Humidity:</p>
                 </section>
                 <section class="weather-card">
-                    <p class="date-text">Date</p>
+                    <p class="date-text" id="date3">Date</p>
                     <p class="emoji-text">emoji</p>
                     <p class="weather-text">Temp:</p>
                     <p class="weather-text">Wind:</p>
                     <p class="weather-text">Humidity:</p>
                 </section>
                 <section class="weather-card">
-                    <p class="date-text">Date</p>
+                    <p class="date-text" id="date4">Date</p>
                     <p class="emoji-text">emoji</p>
                     <p class="weather-text">Temp:</p>
                     <p class="weather-text">Wind:</p>
                     <p class="weather-text">Humidity:</p>
                 </section>
                 <section class="weather-card">
-                    <p class="date-text">Date</p>
+                    <p class="date-text" id="date5">Date</p>
                     <p class="emoji-text">emoji</p>
                     <p class="weather-text">Temp:</p>
                     <p class="weather-text">Wind:</p>
@@ -80,5 +80,6 @@
 </body> 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./develop/script.js"></script>
 </html>
