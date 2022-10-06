@@ -61,6 +61,9 @@ var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCi
     
             .then(function (data) {
             console.log(data)
+            var latCity = data[0].lat;
+            var lonCity = data[0].lon;
+            var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latCity+'&lon='+lonCity+'&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
             })
 
     })
@@ -96,7 +99,7 @@ fetch(requestCoord)
     })
 
 
-var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=37.7790262&lon=-122.419906&appid=a31f343d33efe24b67a5a44215b748ad';
+var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=37.7790262&lon=-122.419906&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
 
 
     fetch(requestUrl)
