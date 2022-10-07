@@ -87,14 +87,14 @@ function grabCity() {
             var windNowText = document.createTextNode(' '+windNow+' MPH');
             var humidNow = data.main.humidity;
             var humidNowText = document.createTextNode(' '+windNow+'%');
-            var emojiNow = data.weather[0].main;
+            var iconcode = data.weather[0].icon;
+            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+
             currentTemp.appendChild(tempNowText);
             currentWind.appendChild(windNowText);
             currentHumid.appendChild(humidNowText);
-            console.log(tempNow);
-            console.log(windNow);
-            console.log(humidNow);
-            console.log(emojiNow);
+            $('#wicon').attr('src', iconurl);
+
             })
 
     })
@@ -102,19 +102,20 @@ function grabCity() {
 
 // fetchButton.addEventListener('click', getApi);
 
-// var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=37.7790262&lon=-122.419906&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
+var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=37.7790262&lon=-122.419906&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
 
-// var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?&lat=37.7790262&lon=-122.419906&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
+// var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?&lat=37.7790262&lon=-122.419906&dt=1665324000&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
 
 
-//     fetch(requestUrl)
-//     // then is needed because retirning the data takes awhile
-//       .then(function (response) {
-//         return response.json();
-//       })
-//       // recieves parsed data
-//       .then(function (data) {
-//         console.log(data)
-//         })
+    fetch(requestUrl)
+    // then is needed because retirning the data takes awhile
+      .then(function (response) {
+        return response.json();
+      })
+      // recieves parsed data
+      .then(function (data) {
+        console.log(data)
+        })
 
         // note for next time, make it 24 hours post what time it is now
+
