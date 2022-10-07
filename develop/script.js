@@ -23,6 +23,11 @@ var dayFive = moment().add(5, 'days').format('L');
 
 // added formatting for dates
 
+var currentTemp = document.getElementById("current-temp");
+var currentWind = document.getElementById("current-wind");
+var currentHumid = document.getElementById("current-humid");
+var currentEmoji = document.getElementById("current-emoji");
+
 todayDateText.innerHTML = todayDateText.innerHTML.replace('date', today);
 
 dayOneDateText.innerHTML = dayOneDateText.innerHTML.replace('Date', dayOne);
@@ -42,7 +47,7 @@ function grabCity() {
 
   inputCity.innerHTML = inputCity.innerHTML.replace('City Name', searchedCity);
   
-var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
+  var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
 
     fetch(requestCoord)
         .then(function (response) {
@@ -52,7 +57,9 @@ var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCi
         .then(function (data) {
             var latCity = data[0].lat;
             var lonCity = data[0].lon;
-            var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latCity+'&lon='+lonCity+'&appid=a31f343d33efe24b67a5a44215b748ad';
+            var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latCity+'&lon='+lonCity+'&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
+
+            var currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?&lat='+latCity+'&lon='+lonCity+'&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
 
         fetch(weatherUrl)
             .then(function (response) {
@@ -61,53 +68,53 @@ var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCi
     
             .then(function (data) {
             console.log(data)
-            var latCity = data[0].lat;
-            var lonCity = data[0].lon;
-            var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latCity+'&lon='+lonCity+'&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
+            // var tempOne = data[0].lat;
+            // var windOne = data[0].lon;
+            // var humidOne = data[0].lon;
+            // var emojiOne = data[0].lon;
+            })
+        
+        fetch(currentWeatherUrl)
+            .then(function (response) {
+            return response.json();
+            })
+    
+            .then(function (data) {
+            console.log(data);
+            var tempNow = data.main.temp;
+            var tempNowText = document.createTextNode(' '+tempNow+'\u00B0'+'F');
+            var windNow = data.wind.speed;
+            var windNowText = document.createTextNode(' '+windNow+' MPH');
+            var humidNow = data.main.humidity;
+            var humidNowText = document.createTextNode(' '+windNow+'%');
+            var emojiNow = data.weather[0].main;
+            currentTemp.appendChild(tempNowText);
+            currentWind.appendChild(windNowText);
+            currentHumid.appendChild(humidNowText);
+            console.log(tempNow);
+            console.log(windNow);
+            console.log(humidNow);
+            console.log(emojiNow);
             })
 
     })
 }
 
-
-function getApi() {
-  // fetch request gets a list of all the repos for the node.js organization
-  var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=a31f343d33efe24b67a5a44215b748ad';
-
-  fetch(requestUrl)
-  // then is needed because retirning the data takes awhile
-    .then(function (response) {
-      return response.json();
-    })
-    // recieves parsed data
-    .then(function (data) {
-      console.log(data)
-      })
-}
-
 // fetchButton.addEventListener('click', getApi);
-var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q=San Francisco&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
 
-fetch(requestCoord)
-// then is needed because retirning the data takes awhile
-  .then(function (response) {
-    return response.json();
-  })
-  // recieves parsed data
-  .then(function (data) {
-    console.log(data)
-    })
+// var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=37.7790262&lon=-122.419906&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
+
+// var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?&lat=37.7790262&lon=-122.419906&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
 
 
-var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=37.7790262&lon=-122.419906&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
+//     fetch(requestUrl)
+//     // then is needed because retirning the data takes awhile
+//       .then(function (response) {
+//         return response.json();
+//       })
+//       // recieves parsed data
+//       .then(function (data) {
+//         console.log(data)
+//         })
 
-
-    fetch(requestUrl)
-    // then is needed because retirning the data takes awhile
-      .then(function (response) {
-        return response.json();
-      })
-      // recieves parsed data
-      .then(function (data) {
-        console.log(data)
-        })
+        // note for next time, make it 24 hours post what time it is now
