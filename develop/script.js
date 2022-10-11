@@ -189,7 +189,7 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
     inputCity.textContent = searchedCity + ' ';
     
     // requsting coordinates for city entered
-    let requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
+    let requestCoord = 'https://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
   
       fetch(requestCoord)
           .then(function (response) {
@@ -218,7 +218,7 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
               let humidNow = data.main.humidity;
               let humidNowText = ' '+humidNow+'%';
               let iconcode = data.weather[0].icon;
-              let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+              let iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
   
               currentTemp.textContent = tempNowText;
               currentWind.textContent = windNowText;
@@ -242,7 +242,7 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
                   let humidOne = data.list[indexOne].main.humidity;
                   let humidOneText = ' '+humidOne+'%';
                   let iconcodeOne = data.list[indexOne].weather[0].icon;
-                  let iconurlOne = "http://openweathermap.org/img/w/" + iconcodeOne + ".png";
+                  let iconurlOne = "https://openweathermap.org/img/w/" + iconcodeOne + ".png";
       
                   oneTemp.textContent = tempOneText;
                   oneWind.textContent = windOneText;
@@ -256,7 +256,7 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
                   let humidTwo = data.list[indexTwo].main.humidity;
                   let humidTwoText = ' '+humidTwo+'%';
                   let iconcodeTwo = data.list[indexTwo].weather[0].icon;
-                  let iconurlTwo = "http://openweathermap.org/img/w/" + iconcodeTwo + ".png";
+                  let iconurlTwo = "https://openweathermap.org/img/w/" + iconcodeTwo + ".png";
       
                   twoTemp.textContent = tempTwoText;
                   twoWind.textContent = windTwoText;
@@ -270,7 +270,7 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
                   let humidThree = data.list[indexThree].main.humidity;
                   let humidThreeText = ' '+humidThree+'%';
                   let iconcodeThree = data.list[indexThree].weather[0].icon;
-                  let iconurlThree = "http://openweathermap.org/img/w/" + iconcodeThree + ".png";
+                  let iconurlThree = "https://openweathermap.org/img/w/" + iconcodeThree + ".png";
       
                   threeTemp.textContent = tempThreeText;
                   threeWind.textContent = windThreeText;
@@ -284,7 +284,7 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
                   let humidFour = data.list[indexFour].main.humidity;
                   let humidFourText = ' '+humidFour+'%';
                   let iconcodeFour = data.list[indexFour].weather[0].icon;
-                  let iconurlFour = "http://openweathermap.org/img/w/" + iconcodeFour + ".png";
+                  let iconurlFour = "https://openweathermap.org/img/w/" + iconcodeFour + ".png";
       
                   fourTemp.textContent = tempFourText;
                   fourWind.textContent = windFourText;
@@ -298,7 +298,7 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
                   let humidFive = data.list[indexFive].main.humidity;
                   let humidFiveText = ' '+humidFive+'%';
                   let iconcodeFive = data.list[indexFive].weather[0].icon;
-                  let iconurlFive = "http://openweathermap.org/img/w/" + iconcodeFive + ".png";
+                  let iconurlFive = "https://openweathermap.org/img/w/" + iconcodeFive + ".png";
       
                   fiveTemp.textContent = tempFiveText;
                   fiveWind.textContent = windFiveText;
@@ -419,7 +419,7 @@ function grabCity() {
   
   //   below functions mirror other event listener fetch approach
   
-  let requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
+  let requestCoord = 'https://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
 
     fetch(requestCoord)
         .then(function (response) {
@@ -447,7 +447,7 @@ function grabCity() {
             var humidNow = data.main.humidity;
             var humidNowText = ' '+humidNow+'%';
             var iconcode = data.weather[0].icon;
-            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
 
             currentTemp.textContent = tempNowText;
             currentWind.textContent = windNowText;
@@ -471,7 +471,7 @@ function grabCity() {
                 let humidOne = data.list[indexOne].main.humidity;
                 let humidOneText = ' '+humidOne+'%';
                 let iconcodeOne = data.list[indexOne].weather[0].icon;
-                let iconurlOne = "http://openweathermap.org/img/w/" + iconcodeOne + ".png";
+                let iconurlOne = "https://openweathermap.org/img/w/" + iconcodeOne + ".png";
     
                 oneTemp.textContent = tempOneText;
                 oneWind.textContent = windOneText;
@@ -485,7 +485,7 @@ function grabCity() {
                 let humidTwo = data.list[indexTwo].main.humidity;
                 let humidTwoText = ' '+humidTwo+'%';
                 let iconcodeTwo = data.list[indexTwo].weather[0].icon;
-                let iconurlTwo = "http://openweathermap.org/img/w/" + iconcodeTwo + ".png";
+                let iconurlTwo = "https://openweathermap.org/img/w/" + iconcodeTwo + ".png";
     
                 twoTemp.textContent = tempTwoText;
                 twoWind.textContent = windTwoText;
@@ -499,7 +499,7 @@ function grabCity() {
                 let humidThree = data.list[indexThree].main.humidity;
                 let humidThreeText = ' '+humidThree+'%';
                 let iconcodeThree = data.list[indexThree].weather[0].icon;
-                let iconurlThree = "http://openweathermap.org/img/w/" + iconcodeThree + ".png";
+                let iconurlThree = "https://openweathermap.org/img/w/" + iconcodeThree + ".png";
     
                 threeTemp.textContent = tempThreeText;
                 threeWind.textContent = windThreeText;
@@ -513,7 +513,7 @@ function grabCity() {
                 let humidFour = data.list[indexFour].main.humidity;
                 let humidFourText = ' '+humidFour+'%';
                 let iconcodeFour = data.list[indexFour].weather[0].icon;
-                let iconurlFour = "http://openweathermap.org/img/w/" + iconcodeFour + ".png";
+                let iconurlFour = "https://openweathermap.org/img/w/" + iconcodeFour + ".png";
     
                 fourTemp.textContent = tempFourText;
                 fourWind.textContent = windFourText;
@@ -527,7 +527,7 @@ function grabCity() {
                 let humidFive = data.list[indexFive].main.humidity;
                 let humidFiveText = ' '+humidFive+'%';
                 let iconcodeFive = data.list[indexFive].weather[0].icon;
-                let iconurlFive = "http://openweathermap.org/img/w/" + iconcodeFive + ".png";
+                let iconurlFive = "https://openweathermap.org/img/w/" + iconcodeFive + ".png";
     
                 fiveTemp.textContent = tempFiveText;
                 fiveWind.textContent = windFiveText;
@@ -550,7 +550,7 @@ $('#button-container').on('click', '.show', (e) => {
     console.log(searchedCity);
     inputCity.textContent = searchedCity + ' ';
     
-    var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
+    var requestCoord = 'https://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
   
       fetch(requestCoord)
           .then(function (response) {
@@ -578,7 +578,7 @@ $('#button-container').on('click', '.show', (e) => {
               var humidNow = data.main.humidity;
               var humidNowText = ' '+humidNow+'%';
               var iconcode = data.weather[0].icon;
-              var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+              var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
   
               currentTemp.textContent = tempNowText;
               currentWind.textContent = windNowText;
@@ -602,7 +602,7 @@ $('#button-container').on('click', '.show', (e) => {
                   let humidOne = data.list[indexOne].main.humidity;
                   let humidOneText = ' '+humidOne+'%';
                   let iconcodeOne = data.list[indexOne].weather[0].icon;
-                  let iconurlOne = "http://openweathermap.org/img/w/" + iconcodeOne + ".png";
+                  let iconurlOne = "https://openweathermap.org/img/w/" + iconcodeOne + ".png";
       
                   oneTemp.textContent = tempOneText;
                   oneWind.textContent = windOneText;
@@ -616,7 +616,7 @@ $('#button-container').on('click', '.show', (e) => {
                   let humidTwo = data.list[indexTwo].main.humidity;
                   let humidTwoText = ' '+humidTwo+'%';
                   let iconcodeTwo = data.list[indexTwo].weather[0].icon;
-                  let iconurlTwo = "http://openweathermap.org/img/w/" + iconcodeTwo + ".png";
+                  let iconurlTwo = "https://openweathermap.org/img/w/" + iconcodeTwo + ".png";
       
                   twoTemp.textContent = tempTwoText;
                   twoWind.textContent = windTwoText;
@@ -630,7 +630,7 @@ $('#button-container').on('click', '.show', (e) => {
                   let humidThree = data.list[indexThree].main.humidity;
                   let humidThreeText = ' '+humidThree+'%';
                   let iconcodeThree = data.list[indexThree].weather[0].icon;
-                  let iconurlThree = "http://openweathermap.org/img/w/" + iconcodeThree + ".png";
+                  let iconurlThree = "https://openweathermap.org/img/w/" + iconcodeThree + ".png";
       
                   threeTemp.textContent = tempThreeText;
                   threeWind.textContent = windThreeText;
@@ -644,7 +644,7 @@ $('#button-container').on('click', '.show', (e) => {
                   let humidFour = data.list[indexFour].main.humidity;
                   let humidFourText = ' '+humidFour+'%';
                   let iconcodeFour = data.list[indexFour].weather[0].icon;
-                  let iconurlFour = "http://openweathermap.org/img/w/" + iconcodeFour + ".png";
+                  let iconurlFour = "https://openweathermap.org/img/w/" + iconcodeFour + ".png";
       
                   fourTemp.textContent = tempFourText;
                   fourWind.textContent = windFourText;
@@ -658,7 +658,7 @@ $('#button-container').on('click', '.show', (e) => {
                   let humidFive = data.list[indexFive].main.humidity;
                   let humidFiveText = ' '+humidFive+'%';
                   let iconcodeFive = data.list[indexFive].weather[0].icon;
-                  let iconurlFive = "http://openweathermap.org/img/w/" + iconcodeFive + ".png";
+                  let iconurlFive = "https://openweathermap.org/img/w/" + iconcodeFive + ".png";
       
                   fiveTemp.textContent = tempFiveText;
                   fiveWind.textContent = windFiveText;
