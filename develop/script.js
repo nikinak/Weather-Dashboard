@@ -1,65 +1,66 @@
-var buttonList = $('#button-list-history')
-var buttonListActive = $('#button-list')
-var container = document.getElementById('change');
-var containerOne = document.getElementById('change-one');
-var containerTwo = document.getElementById('change-two');
-var containerThree = document.getElementById('change-three');
-var containerFour = document.getElementById('change-four');
-var containerFive = document.getElementById('change-five');
-var containerSix = document.getElementById('change-six');
-var containerSeven = document.getElementById('change-seven');
-var containerEight = document.getElementById('change-eight');
-var search = document.getElementById('submit');
-var inputCity = document.getElementById("city-name");
-var todayDateText = document.getElementById("today-date");
-var dayOneDateText = document.getElementById("date1");
-var dayTwoDateText = document.getElementById("date2");
-var dayThreeDateText = document.getElementById("date3");
-var dayFourDateText = document.getElementById("date4");
-var dayFiveDateText = document.getElementById("date5");
-var today  = moment().format('L');
-var dayOne = moment().add(1, 'days').format('L'); 
-var dayTwo = moment().add(2, 'days').format('L'); 
-var dayThree = moment().add(3, 'days').format('L'); 
-var dayFour = moment().add(4, 'days').format('L'); 
-var dayFive = moment().add(5, 'days').format('L'); 
-var currentTime = new Date().getHours();
+// defined global button and date variables
+let buttonList = $('#button-list-history')
+let buttonListActive = $('#button-list')
+let container = document.getElementById('change');
+let containerOne = document.getElementById('change-one');
+let containerTwo = document.getElementById('change-two');
+let containerThree = document.getElementById('change-three');
+let containerFour = document.getElementById('change-four');
+let containerFive = document.getElementById('change-five');
+let containerSix = document.getElementById('change-six');
+let containerSeven = document.getElementById('change-seven');
+let containerEight = document.getElementById('change-eight');
+let search = document.getElementById('submit');
+let inputCity = document.getElementById("city-name");
+let todayDateText = document.getElementById("today-date");
+let dayOneDateText = document.getElementById("date1");
+let dayTwoDateText = document.getElementById("date2");
+let dayThreeDateText = document.getElementById("date3");
+let dayFourDateText = document.getElementById("date4");
+let dayFiveDateText = document.getElementById("date5");
+let today  = moment().format('L');
+let dayOne = moment().add(1, 'days').format('L'); 
+let dayTwo = moment().add(2, 'days').format('L'); 
+let dayThree = moment().add(3, 'days').format('L'); 
+let dayFour = moment().add(4, 'days').format('L'); 
+let dayFive = moment().add(5, 'days').format('L'); 
+let currentTime = new Date().getHours();
 
 console.log(currentTime);
 
-// added formatting for dates
+// defined global variables for weather cards
 
-var currentTemp = document.getElementById("current-temp");
-var currentWind = document.getElementById("current-wind");
-var currentHumid = document.getElementById("current-humid");
-var currentEmoji = document.getElementById("current-emoji");
+let currentTemp = document.getElementById("current-temp");
+let currentWind = document.getElementById("current-wind");
+let currentHumid = document.getElementById("current-humid");
+let currentEmoji = document.getElementById("current-emoji");
 
-var twoTemp = document.getElementById("day-two-temp");
-var twoWind = document.getElementById("day-two-wind");
-var twoHumid = document.getElementById("day-two-humid");
-var twoIcon = document.getElementById("day-two-icon");
+let twoTemp = document.getElementById("day-two-temp");
+let twoWind = document.getElementById("day-two-wind");
+let twoHumid = document.getElementById("day-two-humid");
+let twoIcon = document.getElementById("day-two-icon");
 
-var threeTemp = document.getElementById("day-three-temp");
-var threeWind = document.getElementById("day-three-wind");
-var threeHumid = document.getElementById("day-three-humid");
-var threeIcon = document.getElementById("day-three-icon");
+let threeTemp = document.getElementById("day-three-temp");
+let threeWind = document.getElementById("day-three-wind");
+let threeHumid = document.getElementById("day-three-humid");
+let threeIcon = document.getElementById("day-three-icon");
 
-var oneTemp = document.getElementById("day-one-temp");
-var oneWind = document.getElementById("day-one-wind");
-var oneHumid = document.getElementById("day-one-humid");
-var oneIcon = document.getElementById("day-one-icon");
+let oneTemp = document.getElementById("day-one-temp");
+let oneWind = document.getElementById("day-one-wind");
+let oneHumid = document.getElementById("day-one-humid");
+let oneIcon = document.getElementById("day-one-icon");
 
-var fourTemp = document.getElementById("day-four-temp");
-var fourWind = document.getElementById("day-four-wind");
-var fourHumid = document.getElementById("day-four-humid");
-var fourIcon = document.getElementById("day-four-icon");
+let fourTemp = document.getElementById("day-four-temp");
+let fourWind = document.getElementById("day-four-wind");
+let fourHumid = document.getElementById("day-four-humid");
+let fourIcon = document.getElementById("day-four-icon");
 
-var fiveTemp = document.getElementById("day-five-temp");
-var fiveWind = document.getElementById("day-five-wind");
-var fiveHumid = document.getElementById("day-five-humid");
-var fiveIcon = document.getElementById("day-five-icon");
+let fiveTemp = document.getElementById("day-five-temp");
+let fiveWind = document.getElementById("day-five-wind");
+let fiveHumid = document.getElementById("day-five-humid");
+let fiveIcon = document.getElementById("day-five-icon");
 
-
+// defined date functions
 todayDateText.innerHTML = todayDateText.innerHTML.replace('date', today);
 
 dayOneDateText.innerHTML = dayOneDateText.innerHTML.replace('Date', dayOne);
@@ -72,8 +73,10 @@ dayFourDateText.innerHTML = dayFourDateText.innerHTML.replace('Date', dayFour);
 
 dayFiveDateText.innerHTML = dayFiveDateText.innerHTML.replace('Date', dayFive);
 
+// clickevent for search button
 search.addEventListener('click', grabCity);
 
+// defining variables for what time to pull each date from (aimed for the afternoon where feasible)
 let indexOne = '';
 let indexTwo = '';
 let indexThree = '';
@@ -154,7 +157,9 @@ else if((currentTime == 23) || (currentTime == 0)){
 
 console.log(indexOne);
 
-var storedCitiesHistory = JSON.parse(localStorage.getItem("searchedCityList"));
+// added button data from local storage on page reload
+
+let storedCitiesHistory = JSON.parse(localStorage.getItem("searchedCityList"));
 
 console.log(storedCitiesHistory);
 
@@ -175,13 +180,16 @@ for (let i = 0; i < storedCitiesHistory.length; i++) {
 }
 }
 
+// event for click event of prior search results button upon page load, pulling events from dynamically loaded buttons
+
 $('#button-list-history').on('click', '#buttonName', (e) => {
     let searchedCity = $(e.target).attr('city') || $(e.target).closest('#buttonName').attr('city');
     console.log(searchedCity);
 
     inputCity.textContent = searchedCity + ' ';
     
-    var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
+    // requsting coordinates for city entered
+    let requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
   
       fetch(requestCoord)
           .then(function (response) {
@@ -189,12 +197,13 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
           })
     
           .then(function (data) {
-              var latCity = data[0].lat;
-              var lonCity = data[0].lon;
-              var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latCity+'&lon='+lonCity+'&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
-  
+              let latCity = data[0].lat;
+              let lonCity = data[0].lon;
+              let weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latCity+'&lon='+lonCity+'&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
+            
               var currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?&lat='+latCity+'&lon='+lonCity+'&appid=a31f343d33efe24b67a5a44215b748ad&units=imperial';
           
+            //   fetch for current weather API call
           fetch(currentWeatherUrl)
               .then(function (response) {
               return response.json();
@@ -202,14 +211,14 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
       
               .then(function (data) {
               console.log(data);
-              var tempNow = data.main.temp;
-              var tempNowText = ' '+tempNow+'\u00B0'+'F';
-              var windNow = data.wind.speed;
-              var windNowText = ' '+windNow+' MPH';
-              var humidNow = data.main.humidity;
-              var humidNowText = ' '+humidNow+'%';
-              var iconcode = data.weather[0].icon;
-              var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+              let tempNow = data.main.temp;
+              let tempNowText = ' '+tempNow+'\u00B0'+'F';
+              let windNow = data.wind.speed;
+              let windNowText = ' '+windNow+' MPH';
+              let humidNow = data.main.humidity;
+              let humidNowText = ' '+humidNow+'%';
+              let iconcode = data.weather[0].icon;
+              let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
   
               currentTemp.textContent = tempNowText;
               currentWind.textContent = windNowText;
@@ -217,7 +226,7 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
               $('#wicon').attr('src', iconurl);
              
   
-  
+                // fetch for 5 day weather data
               fetch(weatherUrl)
               // then is needed because retirning the data takes awhile
                 .then(function (response) {
@@ -305,13 +314,15 @@ $('#button-list-history').on('click', '#buttonName', (e) => {
       })
   })
 
+//   function for click event from search button
 function grabCity() {
-  var searchedCity = document.getElementById("city-search").value;
+  let searchedCity = document.getElementById("city-search").value;
 
   inputCity.textContent = searchedCity + ' ';
 
+//   getting and storing data in local storage
   function addToHistory (value) {
-  var history = getHistory();
+  let history = getHistory();
   history.unshift(value);
   localStorage.setItem("searchedCityList", JSON.stringify(history.slice(0, 8)));
     }
@@ -322,7 +333,9 @@ function grabCity() {
 
   addToHistory($('#city-search').val());
 
-  var citiesHistory = JSON.parse(localStorage.getItem("searchedCityList"));
+// Added hiding and showing of search history buttons
+
+  let citiesHistory = JSON.parse(localStorage.getItem("searchedCityList"));
   console.log(citiesHistory.length);
   if (citiesHistory.length == 1) {
     containerOne.className = 'show';
@@ -404,7 +417,9 @@ function grabCity() {
 
   container.classList.add('hide');
   
-  var requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
+  //   below functions mirror other event listener fetch approach
+  
+  let requestCoord = 'http://api.openweathermap.org/geo/1.0/direct?q='+ searchedCity +'&limit=5&appid=a31f343d33efe24b67a5a44215b748ad';
 
     fetch(requestCoord)
         .then(function (response) {
@@ -527,6 +542,8 @@ function grabCity() {
 
     })
 }
+
+// click event fetch for history stored data that is retreived right after search (not on page load)
 
 $('#button-container').on('click', '.show', (e) => {
     let searchedCity = $(e.target).attr('name') || $(e.target).closest('.show').attr('name');
