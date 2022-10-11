@@ -44,6 +44,10 @@
     font-weight: bolder;
 }
 
+.search-button:hover {
+    background-color: rgb(196, 210, 255);
+}
+
 .spacer {
     height: 2px;
     background-color: rgb(209, 209, 209);
@@ -58,6 +62,10 @@ button {
     border: none;
     border-radius: 5px;
     background-color: rgb(163, 163, 163);
+}
+
+button:hover {
+    background-color: lightgray;
 }
 
 .header-text {
@@ -94,7 +102,7 @@ h4 {
 .weather-card-container {
     display: grid;
     grid-template-columns: repeat(5, 200px);
-    grid-auto-rows: 200px;
+    grid-auto-rows: 220px;
     grid-gap: 20px;
 }
 
@@ -126,4 +134,8 @@ h4 {
     margin-bottom: 20px;
     margin-top: 5px;
     margin-left: 5px;
+}
+
+.hide {
+    display: none;
 }
