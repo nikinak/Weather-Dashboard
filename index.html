@@ -19,59 +19,73 @@
             <input class="input-box" type="text" id="city-search" placeholder="San Diego">
             <button class ="search-button" id="submit">Search</button>
             <p class="spacer"></p>
-            <button id="atlanta">Atlanta</button>
-            <button id="denver">Denver</button>
-            <button id="seattle">Seattle</button>
-            <button id="san-francisco">San Francisco</button>
-            <button id="orlando">Orlando</button>
-            <button id="new-york">New York</button>
-            <button id="chicago">Chicago</button>
-            <button id="austin">Austin</button>
+           <div id="change">
+            <ul id="button-list-history"></ul>
+            </div>
+            <div id ="button-container">
+            <div id="change-one" class="hide">
+            <button id="button-list-one"></button>
+            </div>
+            <div id="change-two" class="hide">
+            <button id="button-list-two"></button></div>
+            <div id="change-three" class="hide">
+            <button id="button-list-three"></button></div>
+            <div id="change-four" class="hide">
+            <button id="button-list-four"></button></div>
+            <div id="change-five" class="hide">
+            <button id="button-list-five"></button></div>
+            <div id="change-six" class="hide">
+            <button id="button-list-six"></button></div>
+            <div id="change-seven" class="hide">
+            <button id="button-list-seven"></button></div>
+            <div id="change-eight" class="hide">
+            <button id="button-list-eight"></button></div>
+            </div>
         </section>
         <section class="sub-full-position">
-            <section class="container2">
-                <h3 class="header-text" id="city-name">City Name <span id="today-date">(date)</span><span id="icon"><img id="wicon" class="icon-position" src="" alt="Weather icon"></span></h3>
-                <p class="sub-text" id="current-temp">Temp:</p>
-                <p class="sub-text" id="current-wind">Wind:</p>
-                <p class="sub-text" id="current-humid">Humidity:</p>
+            <section class="container2" id="test">
+                <h3 class="header-text"><span id="city-name"></span><span id="today-date">(date)</span><span id="icon"><img id="wicon" class="icon-position" src="" alt=""></span></h3>
+                <p class="sub-text">Temp:<span id="current-temp"></span></p>
+                <p class="sub-text">Wind:<span id="current-wind"></span></p>
+                <p class="sub-text">Humidity:<span id="current-humid"></span></p>
             </section>
             <section class="container3">
                 <h4>5-Day Forecast:</h4>
                 <div class = "weather-card-container">
                 <section class="weather-card">
                     <p class="date-text" id="date1">Date</p>
-                    <p class="emoji-text">emoji</p>
-                    <p class="weather-text">Temp:</p>
-                    <p class="weather-text">Wind:</p>
-                    <p class="weather-text">Humidity:</p>
+                    <div class="emoji-text" id="icon"><img id="day-one-icon" src="" alt=""></div>
+                    <p class="weather-text">Temp:<span id="day-one-temp"></span></p>
+                    <p class="weather-text">Wind:<span id="day-one-wind"></span></p>
+                    <p class="weather-text">Humidity:<span id="day-one-humid"></span></p>
                 </section>
                 <section class="weather-card">
                     <p class="date-text"  id="date2">Date</p>
-                    <p class="emoji-text">emoji</p>
-                    <p class="weather-text">Temp:</p>
-                    <p class="weather-text">Wind:</p>
-                    <p class="weather-text">Humidity:</p>
+                    <div class="emoji-text" id="icon"><img id="day-two-icon" src="" alt=""></div>
+                    <p class="weather-text">Temp:<span id="day-two-temp"></span></p>
+                    <p class="weather-text">Wind:<span id="day-two-wind"></span></p>
+                    <p class="weather-text">Humidity:<span id="day-two-humid"></span></p>
                 </section>
                 <section class="weather-card">
                     <p class="date-text" id="date3">Date</p>
-                    <p class="emoji-text">emoji</p>
-                    <p class="weather-text">Temp:</p>
-                    <p class="weather-text">Wind:</p>
-                    <p class="weather-text">Humidity:</p>
+                    <div class="emoji-text" id="icon"><img id="day-three-icon" src="" alt=""></div>
+                    <p class="weather-text">Temp:<span id="day-three-temp"></span></p>
+                    <p class="weather-text">Wind:<span id="day-three-wind"></span></p>
+                    <p class="weather-text">Humidity:<span id="day-three-humid"></span></p>
                 </section>
                 <section class="weather-card">
                     <p class="date-text" id="date4">Date</p>
-                    <p class="emoji-text">emoji</p>
-                    <p class="weather-text">Temp:</p>
-                    <p class="weather-text">Wind:</p>
-                    <p class="weather-text">Humidity:</p>
+                    <div class="emoji-text" id="icon"><img id="day-four-icon" src="" alt=""></div>
+                    <p class="weather-text">Temp:<span id="day-four-temp"></span></p>
+                    <p class="weather-text">Wind:<span id="day-four-wind"></span></p>
+                    <p class="weather-text">Humidity:<span id="day-four-humid"></span></p>
                 </section>
                 <section class="weather-card">
                     <p class="date-text" id="date5">Date</p>
-                    <p class="emoji-text">emoji</p>
-                    <p class="weather-text">Temp:</p>
-                    <p class="weather-text">Wind:</p>
-                    <p class="weather-text">Humidity:</p>
+                    <div class="emoji-text" id="icon"><img id="day-five-icon" src="" alt=""></div>
+                    <p class="weather-text">Temp:<span id="day-five-temp"></span></p>
+                    <p class="weather-text">Wind:<span id="day-five-wind"></span></p>
+                    <p class="weather-text">Humidity:<span id="day-five-humid"></span></p>
                 </section>
                 </div>
             </section>
