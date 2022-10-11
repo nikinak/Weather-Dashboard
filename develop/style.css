@@ -139,3 +139,135 @@ h4 {
 .hide {
     display: none;
 }
+
+@media screen and (max-width: 1400px) {
+    .container2 {
+        width: 830px
+    }
+
+    .weather-card-container {
+        grid-template-columns: repeat(5, 150px);
+    }
+    
+}
+
+@media screen and (max-width: 1150px) {
+    .container2 {
+        width: 490px
+    }
+
+    .weather-card-container {
+        grid-template-columns: repeat(3, 150px);
+    }
+    
+}
+
+@media screen and (max-width: 820px) {
+    .container2 {
+        width: 320px
+    }
+
+    .weather-card-container {
+        grid-template-columns: repeat(2, 150px);
+    }
+
+    .header-text {
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 640px) {
+    .banner {
+        font-size: 22px;
+    }
+
+    .container2 {
+        width: 260px
+    }
+
+    .full-position {
+        grid-template-columns: repeat(3, 220px);
+    }
+
+    .weather-card-container {
+        grid-template-columns: repeat(2, 120px);
+        grid-auto-rows: 190px;
+    }
+
+    .header-text {
+        font-size: 20px;
+    }
+
+    .input-box {
+        width: 200px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 200px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+
+    .date-text {
+        font-size: 12px;
+    }
+    
+    .emoji-text {
+        font-size: 10px;
+    }
+    
+    .weather-text {
+        font-size: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 490px) {
+
+    .container2 {
+        width: 160px
+    }
+
+    .full-position {
+        grid-template-columns: repeat(3, 180px);
+    }
+
+    .weather-card-container {
+        grid-template-columns: repeat(1, 180px);
+        grid-auto-rows: 190px;
+    }
+
+    .header-text {
+        font-size: 20px;
+    }
+
+    .input-box {
+        width: 150px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 150px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+
+    .date-text {
+        font-size: 12px;
+    }
+    
+    .emoji-text {
+        font-size: 10px;
+    }
+    
+    .weather-text {
+        font-size: 10px;
+    }
+    
+}
